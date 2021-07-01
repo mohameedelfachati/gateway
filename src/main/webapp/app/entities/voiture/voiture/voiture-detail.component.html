@@ -1,0 +1,105 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="voiture">
+            <h2><span>Voiture</span> {{ voiture.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Type Vehicule</span></dt>
+                <dd>
+                    <span>{{ voiture.typeVehicule }}</span>
+                </dd>
+                <dt><span>Marque</span></dt>
+                <dd>
+                    <span>{{ voiture.marque }}</span>
+                </dd>
+                <dt><span>Modele</span></dt>
+                <dd>
+                    <span>{{ voiture.modele }}</span>
+                </dd>
+                <dt><span>Usage</span></dt>
+                <dd>
+                    <span>{{ voiture.usage }}</span>
+                </dd>
+                <dt><span>Typecarburant</span></dt>
+                <dd>
+                    <span>{{ voiture.typecarburant }}</span>
+                </dd>
+                <dt><span>Matricule</span></dt>
+                <dd>
+                    <span>{{ voiture.matricule }}</span>
+                </dd>
+                <dt><span>Matriculeww</span></dt>
+                <dd>
+                    <span>{{ voiture.matriculeww }}</span>
+                </dd>
+                <dt><span>N Chassi</span></dt>
+                <dd>
+                    <span>{{ voiture.nChassi }}</span>
+                </dd>
+                <dt><span>Capacite</span></dt>
+                <dd>
+                    <span>{{ voiture.capacite }}</span>
+                </dd>
+                <dt><span>Division</span></dt>
+                <dd>
+                    <span>{{ voiture.division }}</span>
+                </dd>
+                <dt><span>Puissancefiscal</span></dt>
+                <dd>
+                    <span>{{ voiture.puissancefiscal }}</span>
+                </dd>
+                <dt><span>Datemiscirculation</span></dt>
+                <dd>
+                    <span>{{ voiture.datemiscirculation }}</span>
+                </dd>
+                <dt><span>Dateacquisition</span></dt>
+                <dd>
+                    <span>{{ voiture.dateacquisition }}</span>
+                </dd>
+                <dt><span>Affectationdivision</span></dt>
+                <dd>
+                    <span>{{ voiture.affectationdivision }}</span>
+                </dd>
+                <dt><span>Affectation Service</span></dt>
+                <dd>
+                    <span>{{ voiture.affectationService }}</span>
+                </dd>
+                <dt><span>Beneficiaire</span></dt>
+                <dd>
+                    <span>{{ voiture.beneficiaire }}</span>
+                </dd>
+                <dt><span>Kilometrage</span></dt>
+                <dd>
+                    <span>{{ voiture.kilometrage }}</span>
+                </dd>
+                <dt><span>Piece Jointe</span></dt>
+                <dd>
+                    <div *ngIf="voiture.pieceJointe">
+                        <a (click)="openFile(voiture.pieceJointeContentType, voiture.pieceJointe)">open</a>
+                        {{ voiture.pieceJointeContentType }}, {{ byteSize(voiture.pieceJointe) }}
+                    </div>
+                </dd>
+                <dt><span>Status</span></dt>
+                <dd>
+                    <span>{{ voiture.status }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/voiture', voiture.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

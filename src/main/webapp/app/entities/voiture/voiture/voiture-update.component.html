@@ -1,0 +1,161 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-voiture-heading">Create or edit a Voiture</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_typeVehicule">Type Vehicule</label>
+                    <input type="text" class="form-control" name="typeVehicule" id="field_typeVehicule"
+                           formControlName="typeVehicule"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_marque">Marque</label>
+                    <input type="text" class="form-control" name="marque" id="field_marque"
+                           formControlName="marque"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_modele">Modele</label>
+                    <input type="text" class="form-control" name="modele" id="field_modele"
+                           formControlName="modele"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_usage">Usage</label>
+                    <input type="text" class="form-control" name="usage" id="field_usage"
+                           formControlName="usage"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_typecarburant">Typecarburant</label>
+                    <input type="text" class="form-control" name="typecarburant" id="field_typecarburant"
+                           formControlName="typecarburant"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_matricule">Matricule</label>
+                    <input type="number" class="form-control" name="matricule" id="field_matricule"
+                           formControlName="matricule"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_matriculeww">Matriculeww</label>
+                    <input type="number" class="form-control" name="matriculeww" id="field_matriculeww"
+                           formControlName="matriculeww"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nChassi">N Chassi</label>
+                    <input type="number" class="form-control" name="nChassi" id="field_nChassi"
+                           formControlName="nChassi"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_capacite">Capacite</label>
+                    <input type="number" class="form-control" name="capacite" id="field_capacite"
+                           formControlName="capacite"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_division">Division</label>
+                    <input type="text" class="form-control" name="division" id="field_division"
+                           formControlName="division"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_puissancefiscal">Puissancefiscal</label>
+                    <input type="number" class="form-control" name="puissancefiscal" id="field_puissancefiscal"
+                           formControlName="puissancefiscal"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_datemiscirculation">Datemiscirculation</label>
+                    <div class="input-group">
+                        <input id="field_datemiscirculation" type="text" class="form-control" name="datemiscirculation" ngbDatepicker #datemiscirculationDp="ngbDatepicker" formControlName="datemiscirculation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datemiscirculationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dateacquisition">Dateacquisition</label>
+                    <div class="input-group">
+                        <input id="field_dateacquisition" type="text" class="form-control" name="dateacquisition" ngbDatepicker #dateacquisitionDp="ngbDatepicker" formControlName="dateacquisition"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateacquisitionDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_affectationdivision">Affectationdivision</label>
+                    <input type="number" class="form-control" name="affectationdivision" id="field_affectationdivision"
+                           formControlName="affectationdivision"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_affectationService">Affectation Service</label>
+                    <input type="number" class="form-control" name="affectationService" id="field_affectationService"
+                           formControlName="affectationService"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_beneficiaire">Beneficiaire</label>
+                    <input type="number" class="form-control" name="beneficiaire" id="field_beneficiaire"
+                           formControlName="beneficiaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_kilometrage">Kilometrage</label>
+                    <input type="number" class="form-control" name="kilometrage" id="field_kilometrage"
+                           formControlName="kilometrage"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_pieceJointe">Piece Jointe</label>
+                    <div>
+                        <div *ngIf="editForm.get('pieceJointe')!.value" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(editForm.get('pieceJointeContentType')!.value, editForm.get('pieceJointe')!.value)">open</a><br>
+                            <span class="pull-left">{{ editForm.get('pieceJointeContentType')!.value }}, {{ byteSize(editForm.get('pieceJointe')!.value) }}</span>
+                            <button type="button" (click)="editForm.patchValue({pieceJointe: null});editForm.patchValue({pieceJointeContentType: null});"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_pieceJointe" (change)="setFileData($event, 'pieceJointe', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="pieceJointe" id="field_pieceJointe"
+                           formControlName="pieceJointe"/>
+                    <input type="hidden" class="form-control" name="pieceJointeContentType" id="field_pieceJointeContentType"
+                           formControlName="pieceJointeContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_status">Status</label>
+                    <input type="text" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

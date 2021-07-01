@@ -1,0 +1,155 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-demande-mise-disposition-heading">Create or edit a Demande Mise Disposition</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_matricule">Matricule</label>
+                    <input type="text" class="form-control" name="matricule" id="field_matricule"
+                           formControlName="matricule"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_datedemande">Datedemande</label>
+                    <div class="input-group">
+                        <input id="field_datedemande" type="text" class="form-control" name="datedemande" ngbDatepicker #datedemandeDp="ngbDatepicker" formControlName="datedemande"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datedemandeDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_datedebutmisedisposition">Datedebutmisedisposition</label>
+                    <div class="input-group">
+                        <input id="field_datedebutmisedisposition" type="text" class="form-control" name="datedebutmisedisposition" ngbDatepicker #datedebutmisedispositionDp="ngbDatepicker" formControlName="datedebutmisedisposition"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datedebutmisedispositionDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_datefinmisedisposition">Datefinmisedisposition</label>
+                    <div class="input-group">
+                        <input id="field_datefinmisedisposition" type="text" class="form-control" name="datefinmisedisposition" ngbDatepicker #datefinmisedispositionDp="ngbDatepicker" formControlName="datefinmisedisposition"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datefinmisedispositionDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_heurdebut">Heurdebut</label>
+                    <div class="input-group">
+                        <input id="field_heurdebut" type="text" class="form-control" name="heurdebut" ngbDatepicker #heurdebutDp="ngbDatepicker" formControlName="heurdebut"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="heurdebutDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_heurfin">Heurfin</label>
+                    <div class="input-group">
+                        <input id="field_heurfin" type="text" class="form-control" name="heurfin" ngbDatepicker #heurfinDp="ngbDatepicker" formControlName="heurfin"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="heurfinDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_motif">Motif</label>
+                    <input type="text" class="form-control" name="motif" id="field_motif"
+                           formControlName="motif"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_typevehicule">Typevehicule</label>
+                    <input type="text" class="form-control" name="typevehicule" id="field_typevehicule"
+                           formControlName="typevehicule"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lieudepart">Lieudepart</label>
+                    <input type="text" class="form-control" name="lieudepart" id="field_lieudepart"
+                           formControlName="lieudepart"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lieuarrive">Lieuarrive</label>
+                    <input type="text" class="form-control" name="lieuarrive" id="field_lieuarrive"
+                           formControlName="lieuarrive"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_division">Division</label>
+                    <input type="text" class="form-control" name="division" id="field_division"
+                           formControlName="division"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_services">Services</label>
+                    <input type="text" class="form-control" name="services" id="field_services"
+                           formControlName="services"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nombrebenificiaire">Nombrebenificiaire</label>
+                    <input type="number" class="form-control" name="nombrebenificiaire" id="field_nombrebenificiaire"
+                           formControlName="nombrebenificiaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_beneficiaire">Beneficiaire</label>
+                    <input type="text" class="form-control" name="beneficiaire" id="field_beneficiaire"
+                           formControlName="beneficiaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_piecejointes">Piecejointes</label>
+                    <div>
+                        <div *ngIf="editForm.get('piecejointes')!.value" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(editForm.get('piecejointesContentType')!.value, editForm.get('piecejointes')!.value)">open</a><br>
+                            <span class="pull-left">{{ editForm.get('piecejointesContentType')!.value }}, {{ byteSize(editForm.get('piecejointes')!.value) }}</span>
+                            <button type="button" (click)="editForm.patchValue({piecejointes: null});editForm.patchValue({piecejointesContentType: null});"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_piecejointes" (change)="setFileData($event, 'piecejointes', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="piecejointes" id="field_piecejointes"
+                           formControlName="piecejointes"/>
+                    <input type="hidden" class="form-control" name="piecejointesContentType" id="field_piecejointesContentType"
+                           formControlName="piecejointesContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_statutdis">Statutdis</label>
+                    <input type="text" class="form-control" name="statutdis" id="field_statutdis"
+                           formControlName="statutdis"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

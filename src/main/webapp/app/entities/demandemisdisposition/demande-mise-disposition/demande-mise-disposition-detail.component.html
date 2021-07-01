@@ -1,0 +1,93 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="demandeMiseDisposition">
+            <h2><span>Demande Mise Disposition</span> {{ demandeMiseDisposition.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Matricule</span></dt>
+                <dd>
+                    <span>{{ demandeMiseDisposition.matricule }}</span>
+                </dd>
+                <dt><span>Datedemande</span></dt>
+                <dd>
+                    <span>{{ demandeMiseDisposition.datedemande }}</span>
+                </dd>
+                <dt><span>Datedebutmisedisposition</span></dt>
+                <dd>
+                    <span>{{ demandeMiseDisposition.datedebutmisedisposition }}</span>
+                </dd>
+                <dt><span>Datefinmisedisposition</span></dt>
+                <dd>
+                    <span>{{ demandeMiseDisposition.datefinmisedisposition }}</span>
+                </dd>
+                <dt><span>Heurdebut</span></dt>
+                <dd>
+                    <span>{{ demandeMiseDisposition.heurdebut }}</span>
+                </dd>
+                <dt><span>Heurfin</span></dt>
+                <dd>
+                    <span>{{ demandeMiseDisposition.heurfin }}</span>
+                </dd>
+                <dt><span>Motif</span></dt>
+                <dd>
+                    <span>{{ demandeMiseDisposition.motif }}</span>
+                </dd>
+                <dt><span>Typevehicule</span></dt>
+                <dd>
+                    <span>{{ demandeMiseDisposition.typevehicule }}</span>
+                </dd>
+                <dt><span>Lieudepart</span></dt>
+                <dd>
+                    <span>{{ demandeMiseDisposition.lieudepart }}</span>
+                </dd>
+                <dt><span>Lieuarrive</span></dt>
+                <dd>
+                    <span>{{ demandeMiseDisposition.lieuarrive }}</span>
+                </dd>
+                <dt><span>Division</span></dt>
+                <dd>
+                    <span>{{ demandeMiseDisposition.division }}</span>
+                </dd>
+                <dt><span>Services</span></dt>
+                <dd>
+                    <span>{{ demandeMiseDisposition.services }}</span>
+                </dd>
+                <dt><span>Nombrebenificiaire</span></dt>
+                <dd>
+                    <span>{{ demandeMiseDisposition.nombrebenificiaire }}</span>
+                </dd>
+                <dt><span>Beneficiaire</span></dt>
+                <dd>
+                    <span>{{ demandeMiseDisposition.beneficiaire }}</span>
+                </dd>
+                <dt><span>Piecejointes</span></dt>
+                <dd>
+                    <div *ngIf="demandeMiseDisposition.piecejointes">
+                        <a (click)="openFile(demandeMiseDisposition.piecejointesContentType, demandeMiseDisposition.piecejointes)">open</a>
+                        {{ demandeMiseDisposition.piecejointesContentType }}, {{ byteSize(demandeMiseDisposition.piecejointes) }}
+                    </div>
+                </dd>
+                <dt><span>Statutdis</span></dt>
+                <dd>
+                    <span>{{ demandeMiseDisposition.statutdis }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/demande-mise-disposition', demandeMiseDisposition.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
